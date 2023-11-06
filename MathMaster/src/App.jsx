@@ -31,11 +31,13 @@ function App() {
             <button onClick={() => handleNumberClick('7')}>7</button>
             <button onClick={() => handleNumberClick('8')}>8</button>
             <button onClick={() => handleNumberClick('9')}>9</button>
+            <button onClick={() => handleNumberClick('+')}>+</button>
           </div>
           <div className="row">
             <button onClick={() => handleNumberClick('4')}>4</button>
             <button onClick={() => handleNumberClick('5')}>5</button>
             <button onClick={() => handleNumberClick('6')}>6</button>
+            <button onClick={() => handleNumberClick('-')}>-</button>
           </div>
           <div className="row">
             <button onClick={() => handleNumberClick('1')}>1</button>
@@ -44,8 +46,8 @@ function App() {
           </div>
           <div className="row">
             <button onClick={clearInput}>C</button>
+            <button onClick={() => handleNumberClick('0')}>0</button>
             <button onClick={calculateResult}>=</button>
-            <button onClick={() => handleNumberClick('+')}>+</button>
           </div>
           
         </div>
