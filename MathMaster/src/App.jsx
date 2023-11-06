@@ -1,9 +1,9 @@
 import { useState } from 'react';
+import * as math from 'mathjs';
 
 function App() {
   const [inputValue, setInputValue] = useState('');
   const [result, setResult] = useState('');
-
   const handleNumberClick = (num) => {
     setInputValue(inputValue + num);
   };
@@ -15,9 +15,9 @@ function App() {
 
   const calculateResult = () => {
     try {
-      setResult(eval(inputValue).toString());
+      setResult(math.evaluate(inputValue).toString());
     } catch (error) {
-      setResult('Error');
+      setResult(error.message);
     }
   };
 
@@ -43,10 +43,11 @@ function App() {
             <button onClick={() => handleNumberClick('3')}>3</button>
           </div>
           <div className="row">
-            <button onClick={() => handleNumberClick('0')}>0</button>
             <button onClick={clearInput}>C</button>
             <button onClick={calculateResult}>=</button>
+            <button onClick={() => handleNumberClick('+')}>+</button>
           </div>
+          
         </div>
       </div>
       <p>Resultado: {result}</p>
