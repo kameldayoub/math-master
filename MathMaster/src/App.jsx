@@ -6,6 +6,7 @@ function App() {
   const [result, setResult] = useState('');
   const [history, setHistory] = useState([]); // Nuevo estado para el historial
   const [showHistory, setShowHistory] = useState(false); // Nuevo estado para controlar la visualización del historial
+  const [isCalculateDisabled, setIsCalculateDisabled] = useState(false);
 
   const toggleHistory = () => {
     setShowHistory(!showHistory); // Cambiar el estado de showHistory cada vez que se haga clic en el botón
@@ -13,9 +14,11 @@ function App() {
   const handleNumberClick = (num) => {
     const lastChar = inputValue[inputValue.length - 1];
     if ('+-*/^%'.includes(lastChar) && '+-*/^%'.includes(num)) {
-      return; // No hacer nada si el último carácter y el nuevo carácter son signos
+      return;
     }
+
     setInputValue(inputValue + num);
+    setIsCalculateDisabled(false); // Habilitar el botón después de agregar un número válido
   };
 
   const clearInput = () => {
@@ -29,18 +32,27 @@ function App() {
 
   const calculateResult = () => {
     try {
+      const lastChar = inputValue[inputValue.length - 1];
+      const isValidLastChar = /[0-9)$]/.test(lastChar);
+  
+      if (!isValidLastChar) {
+        setIsCalculateDisabled(true); // Deshabilitar el botón si el último carácter no es válido
+        return;
+      }
+  
       const input = inputValue.replace(/√/g, 'sqrt');
       const result = math.evaluate(input).toString();
-      setInputValue(result); // Actualizar inputValue en lugar de result
-      const newHistory = [...history, `${input} = ${result}`]; // Agregar al historial
+      setInputValue(result);
+      const newHistory = [...history, `${input} = ${result}`];
       if (newHistory.length > 5) {
-        newHistory.shift(); // Eliminar el cálculo más antiguo si el historial tiene más de 5 elementos
+        newHistory.shift();
       }
       setHistory(newHistory);
     } catch (error) {
-      setInputValue(error.message); // Actualizar inputValue en lugar de result
+      setIsCalculateDisabled(true); // Deshabilitar el botón en caso de error
     }
   };
+  
 
   const addSqrt = () => {
     setInputValue(`√(${inputValue})`);
@@ -51,7 +63,7 @@ function App() {
       {/* <h1>Math Master</h1> */}
       <div className="calculator">
         <input className='testo' type="text" value={inputValue} readOnly />
-        <div className="buttons">
+        <div className="buttons" id='buttons'>
           <div className="row">
           <button className='histo' onClick={toggleHistory}>historial</button>
             <button className='butonAC' onClick={clearInput}>AC</button>
@@ -85,11 +97,16 @@ function App() {
           <div className="row">
             <button className='buton' onClick={() => handleNumberClick(".")}>.</button>
             <button className='buton' onClick={() => handleNumberClick('0')}>0</button>
-            <button className='square-button' onClick={calculateResult}>=</button>
+            <button className='square-button' onClick={calculateResult} disabled={isCalculateDisabled}>=</button>
             <button className='buton1' onClick={() => handleNumberClick('*')}>*</button>
           </div>
           {/* <p>Resultado: {result}</p> */}
-          <center>
+          
+          
+
+        </div>
+        
+        <center>
             {showHistory && ( // Mostrar el historial solo si showHistory es true
             <div className="history">
               <h2>Historial de cálculos:</h2>
@@ -101,10 +118,6 @@ function App() {
             </div>
           )}
           </center>
-          
-          
-
-        </div>
       </div>
     </div>
   );
