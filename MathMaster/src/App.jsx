@@ -17,7 +17,7 @@ function App() {
     }
     setInputValue(inputValue + num);
   };
-  
+
   const clearInput = () => {
     setInputValue('');
     setResult('');
@@ -89,7 +89,8 @@ function App() {
             <button className='buton1' onClick={() => handleNumberClick('*')}>*</button>
           </div>
           {/* <p>Resultado: {result}</p> */}
-          {showHistory && ( // Mostrar el historial solo si showHistory es true
+          <center>
+            {showHistory && ( // Mostrar el historial solo si showHistory es true
             <div className="history">
               <h2>Historial de cálculos:</h2>
               <ul>
@@ -99,6 +100,9 @@ function App() {
               </ul>
             </div>
           )}
+          </center>
+          
+          
 
         </div>
       </div>

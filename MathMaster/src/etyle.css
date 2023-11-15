@@ -1,5 +1,7 @@
 *{
     background-color: #85182a;
+    font-family: 'Courier New', Courier, monospace;
+    
 }
 .calculator{
     display: flex;
@@ -10,11 +12,27 @@
     margin-top: 100px;
 }
 
+.history,h2{
+    background-color: #641220;
+    border-radius: 20px;
+    padding: 5px;
+    color: #FFF;
+}
+ul, li{
+    background-color: #641220;
+    text-decoration: none;
+    color: #FFF;
+    list-style-type:none;
+    font-size: 11pt;
+    padding-bottom: 10px;
+
+}
+
 
 .testo{
 
-    background-color: #ccc;
-    color:black;
+    background-color: #641220;
+    color:#fff;
     border: none;
     width: 300px;
     font-size: 30pt;
@@ -115,7 +133,7 @@
     transition: background-color 0.3s, color 0.3s; /* Transiciones suaves */
     margin: 10px;
     height: 50px;
-    padding: 0px 60px;
+    padding: 0px 40px;
 }
 
 .buton1{
