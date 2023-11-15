@@ -1,0 +1,137 @@
+*{
+    background-color: #85182a;
+}
+.calculator{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    margin-top: 100px;
+}
+
+
+.testo{
+
+    background-color: #ccc;
+    color:black;
+    border: none;
+    width: 300px;
+    font-size: 30pt;
+    padding: 30px 20px 10px 20px;
+    border-radius:30px 30px  10px 10px ;
+    text-align: 'right';
+}
+
+/* Estilo base para los botones */
+.buton {
+    display: inline-block;
+    width: 50px; /* Ajusta el tamaño según tus necesidades */
+    height: 50px; /* Ajusta el tamaño según tus necesidades */
+    border: none;
+    border-radius: 50%; /* Esto hará que el botón sea circular */
+    background-color: #FFF; /* Color blanco pastel */
+    color: #000; /* Color del texto */
+    font-size: 20px; /* Tamaño del texto */
+    text-align: center;
+    line-height: 50px; /* Alinea verticalmente el texto en el centro */
+    text-decoration: none;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s; /* Transiciones suaves */
+    margin: 10px;
+}
+  
+/* Cambios de estilo al pasar el ratón sobre el botón */
+.buton:hover {
+    background-color: #ccc; /* Cambia a un gris leve al pasar el ratón */
+    color: #000; /* Cambia el color del texto */
+}
+
+.square-button {
+    display: inline-block;
+    padding: 10px 15px; /* Ajusta el padding según tus necesidades */
+    border: none;
+    border-radius: 8px; /* Bordes redondeados */
+    background-color: #641220; /* Color de fondo blanco */
+    color: #FFF; /* Color del texto */
+    font-size: 16px; /* Tamaño del texto */
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s; /* Transiciones suaves */
+    margin: 10px 16px;
+}
+  
+/* Cambios de estilo al pasar el ratón sobre el botón */
+.square-button:hover {
+    background-color: rgba(130, 1, 1);
+}
+  
+.butonAC {
+    display: absolute;
+    width: 50px; /* Ajusta el tamaño según tus necesidades */
+    height: 50px; /* Ajusta el tamaño según tus necesidades */
+    border: none;
+    border-radius: 5px; /* Esto hará que el botón sea circular */
+    background-color: #FFF; /* Color blanco pastel */
+    color: #000; /* Color del texto */
+    font-size: 20px; /* Tamaño del texto */
+    text-align: center;
+    line-height: 50px; /* Alinea verticalmente el texto en el centro */
+    text-decoration: none;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s; /* Transiciones suaves */
+    margin: 10px;
+}
+
+
+/* Cambios de estilo al pasar el ratón sobre el botón */
+.butonAC:hover {
+    background-color: #ccc; /* Cambia a un gris leve al pasar el ratón */
+    color: #000; /* Cambia el color del texto */
+}
+
+
+
+.App{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+
+.histo{
+    display: inline-block;
+    border: none;
+    border-radius: 20px; 
+    background-color: #650000; /* Color blanco pastel */
+    color: #FFF; /* Color del texto */
+    font-size: 20px; /* Tamaño del texto */
+    text-align: center;
+    line-height: 50px; /* Alinea verticalmente el texto en el centro */
+    text-decoration: none;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s; /* Transiciones suaves */
+    margin: 10px;
+    height: 50px;
+    padding: 0px 60px;
+}
+
+.buton1{
+    display: inline-block;
+    border: none;
+    border-radius: 20px; 
+    background-color: #C71F37; /* Color blanco pastel */
+    color: #FFF; /* Color del texto */
+    font-size: 20px; /* Tamaño del texto */
+    text-align: center;
+    line-height: 50px; /* Alinea verticalmente el texto en el centro */
+    text-decoration: none;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s; /* Transiciones suaves */
+
+    height: 50px;
+    width: 50px;
+    margin: 10px;
+}
